@@ -1,0 +1,9 @@
+{
+  "name": "polymer-rest-template",
+  "description": "Retrieve JSON from REST API and apply it to template",
+  "main": "polymer-rest-template.html",
+  "dependencies": {
+    "mustache": "2.x",
+    "polymer": "1.x"
+  }
+}
