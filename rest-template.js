@@ -1,4 +1,4 @@
-/* global Polymer, Mustache */
+/* global Handlebars, Mustache, Polymer */
 
 (function() {
   "use strict";
@@ -8,6 +8,10 @@
     properties: {
       src: {
         type: String
+      },
+      engine: {
+        type:  String,
+        value: "handlebars"
       }
     },
     ready: function() {
@@ -16,7 +20,15 @@
       fetch(self.src).then(function(res) {
         return res.json();
       }).then(function(json) {
-        self.$$("#rest-output").innerHTML = Mustache.render(Polymer.dom(self).innerHTML, json);
+        if (!self.engine || self.engine === "handlebars") {
+          const template = Handlebars.compile(Polymer.dom(self).innerHTML);
+
+          self.$$("#rest-output").innerHTML = template(json);
+        } else if (self.engine === "mustache") {
+          self.$$("#rest-output").innerHTML = Mustache.render(Polymer.dom(self).innerHTML, json);
+        } else {
+          return Promise.reject(new Error("Unsupported template engine: " + self.engine));
+        }
       }).catch(function(err) {
         console.error(err);
       });

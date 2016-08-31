@@ -4,6 +4,7 @@
   "main": "polymer-rest-template.html",
   "dependencies": {
     "mustache": "2.x",
-    "polymer": "1.x"
+    "polymer": "1.x",
+    "handlebars": "4.0.x"
   }
 }
