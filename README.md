@@ -63,6 +63,12 @@ $ bower install polymer-rest-template
 I haven't registered this to Bower repository for now.
 I will register it when it is a little bit more stable.
 
+You can also use npm, but it is experimental. Bower is recommended.
+
+```shell
+$ npm install --save polymer-rest-template
+```
+
 Usage
 -----
 

@@ -1,0 +1,32 @@
+{
+  "name": "polymer-rest-template",
+  "version": "0.0.1",
+  "description": "Retrieve JSON from REST API and apply it to template",
+  "main": "rest-template.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phanect/polymer-rest-template.git"
+  },
+  "keywords": [
+    "Polymer",
+    "REST",
+    "template",
+    "handlebars"
+  ],
+  "author": "Jumpei Ogawa <phanective@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phanect/polymer-rest-template/issues"
+  },
+  "homepage": "https://github.com/phanect/polymer-rest-template#readme",
+  "dependencies": {
+    "@polymer/polymer": "^1.2.5-npm-test.2",
+    "handlebars": "^4.0.5"
+  }
+}
