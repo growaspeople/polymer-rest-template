@@ -20,12 +20,14 @@
       fetch(self.src).then(function(res) {
         return res.json();
       }).then(function(json) {
+        // TODO sort function
+
         if (!self.engine || self.engine === "handlebars") {
           const template = Handlebars.compile(Polymer.dom(self).innerHTML);
 
-          self.$$("#rest-output").innerHTML = template(json);
+          Polymer.dom(self.root).innerHTML = template(json);
         } else if (self.engine === "mustache") {
-          self.$$("#rest-output").innerHTML = Mustache.render(Polymer.dom(self).innerHTML, json);
+          Polymer.dom(self.root).innerHTML = Mustache.render(Polymer.dom(self).innerHTML, json);
         } else {
           return Promise.reject(new Error("Unsupported template engine: " + self.engine));
         }
