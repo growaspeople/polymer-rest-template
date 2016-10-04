@@ -28,5 +28,9 @@
   "dependencies": {
     "@polymer/polymer": "^1.2.5-npm-test.2",
     "handlebars": "^4.0.5"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-growaspeople": "latest"
   }
 }
