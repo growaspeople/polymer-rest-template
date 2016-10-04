@@ -39,6 +39,8 @@
         } else {
           return Promise.reject(new Error("Unsupported template engine: " + self.engine));
         }
+
+        self.fire("dataReceived");
       }).catch(function(err) {
         console.error(err);
       });
