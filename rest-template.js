@@ -7,7 +7,8 @@
     is:         "rest-template",
     properties: {
       src: {
-        type: String
+        type:     String,
+        observer: "fetchJson"
       },
       engine: {
         type:  String,
@@ -17,10 +18,13 @@
         type:  Object
       }
     },
+    ready: function() {
+      this.fetchJson();
+    },
     getReceivedData: function() {
       return this.data;
     },
-    ready: function() {
+    fetchJson: function() {
       const self = this;
 
       fetch(self.src).then(function(res) {
