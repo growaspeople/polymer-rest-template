@@ -6,6 +6,7 @@
     "mustache": "2.x",
     "polymer": "1.x",
     "handlebars": "4.0.x",
-    "handlebars-helpers": "2.0.x"
+    "handlebars-helpers": "2.0.x",
+    "fetch": "1.0.x"
   }
 }

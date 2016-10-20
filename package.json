@@ -28,7 +28,8 @@
   "homepage": "https://github.com/phanect/polymer-rest-template#readme",
   "dependencies": {
     "@polymer/polymer": "^1.2.5-npm-test.2",
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.5",
+    "whatwg-fetch": "1.0.x"
   },
   "devDependencies": {
     "babel-cli": "6.16.x",
