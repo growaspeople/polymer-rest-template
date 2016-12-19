@@ -3,7 +3,6 @@
   "description": "Retrieve JSON from REST API and apply it to template",
   "main": "polymer-rest-template.html",
   "dependencies": {
-    "core.js": "2.4.x",
     "mustache": "2.x",
     "polymer": "1.x",
     "handlebars": "4.0.x",
