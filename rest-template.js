@@ -15,7 +15,9 @@
         }
       },
       ready: function() {
-        const self = this;
+        const self = this,
+              contentRoot = Polymer.dom(self),
+              template = contentRoot.innerHTML;
 
         fetch(self.src).then(function(res) {
           return res.json();
@@ -23,11 +25,9 @@
           // TODO sort function
 
           if (!self.engine || self.engine === "handlebars") {
-            const template = Handlebars.compile(Polymer.dom(self).innerHTML);
-
-            Polymer.dom(self.root).innerHTML = template(json);
+            contentRoot.parentNode.innerHTML = Handlebars.compile(template)(json);
           } else if (self.engine === "mustache") {
-            Polymer.dom(self.root).innerHTML = Mustache.render(Polymer.dom(self).innerHTML, json);
+            contentRoot.parentNode.innerHTML = Mustache.render(template, json);
           } else {
             return Promise.reject(new Error("Unsupported template engine: " + self.engine));
           }
