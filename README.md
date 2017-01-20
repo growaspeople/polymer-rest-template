@@ -42,11 +42,9 @@ Above HTML with template produces following HTML:
 
 ```html
 <ul>
-  <rest-template src="https://api.github.com/search/repositories?q=user:phanect&sort=updated">
-    <li><a href="https://github.com/phanect/restament">restament</a></li>
-    <li><a href="https://github.com/phanect/polymer-rest-template">polymer-rest-template</a></li>
-    <li><a href="https://github.com/phanect/phanective.org">phanective.org</a></li>
-  </rest-template>
+  <li><a href="https://github.com/phanect/restament">restament</a></li>
+  <li><a href="https://github.com/phanect/polymer-rest-template">polymer-rest-template</a></li>
+  <li><a href="https://github.com/phanect/phanective.org">phanective.org</a></li>
 </ul>
 ```
 
