@@ -10,9 +10,11 @@ For example,
 ```html
 <ul>
   <rest-template src="https://api.github.com/search/repositories?q=user:phanect&sort=updated">
-    {{#each items}}
-      <li><a href="{{ html_url }}">{{ name }}</a></li>
-    {{/each}}
+    <template>
+      {{#each items}}
+        <li><a href="{{ html_url }}">{{ name }}</a></li>
+      {{/each}}
+    </template>
   </rest-template>
 </ul>
 ```
@@ -83,7 +85,9 @@ Be sure to load webcomponentsjs if your browser doesn't fully support web compon
   </head>
   <body>
     <rest-template src="http://localhost/api/v1/something/1">
-      id: {{ id }}, description: {{ description }}
+      <template>
+        id: {{ id }}, description: {{ description }}
+      </template>
     </rest-template>
   </body>
 </html>

@@ -17,7 +17,14 @@
       ready: function() {
         const self = this,
               contentRoot = Polymer.dom(self),
-              template = contentRoot.innerHTML;
+              templateElement = contentRoot.querySelector("template");
+        let template;
+
+        if (templateElement === null) { // Not surrounded by <template></template>
+          template = contentRoot.innerHTML;
+        } else { // Surrounded by <template></template>
+          template = templateElement.innerHTML;
+        }
 
         fetch(self.src).then(function(res) {
           return res.json();
