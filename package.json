@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "babel rest-template.js --out-dir build",
-    "release": "rm -rf ./node_modules/ npm-shrinkwrap.json yarn.lock && npm install && npm shrinkwrap && rm -rf ./node_modules && yarn",
+    "release": "rm -rf ./node_modules/ npm-shrinkwrap.json yarn.lock && npm install && npm shrinkwrap && rm -rf ./node_modules && yarn && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
