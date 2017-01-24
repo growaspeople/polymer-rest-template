@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test for kgb-slider</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="../rest-template.html">
+  </head>
+
+  <body>
+    <rest-template src="./jsons/test.json">
+      <template>
+        {{#each items}}
+          <div>
+            <a href="{{ url }}">
+              {{ name }}
+            </a>
+          </div>
+        {{/each}}
+      </template>
+    </rest-template>
+  </body>
+</html>

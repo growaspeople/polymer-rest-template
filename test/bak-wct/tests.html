@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>polymer-rest-template test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../node_modules/web-component-tester/browser.js"></script>
+    <link rel="import" href="../rest-template.html">
+  </head>
+  <body>
+    <test-fixture id="simple">
+      <template>
+        <rest-template src="./jsons/test.json">
+          <template>
+            {{#each items}}
+              <div>
+                <a href="{{ url }}">
+                  {{ name }}
+                </a>
+              </div>
+            {{/each}}
+          </template>
+        </rest-template>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite("rest-template", () => { // eslint-disable-line strict
+        let divs,
+            as = [], // eslint-disable-line prefer-const
+            json;
+
+        setup(() => {
+
+
+          divs = fixture("simple").querySelectorAll("div"); // document.querySelectorAll("body > div");
+
+          for (let i = 0; i < divs.length; i++) {
+            as[i] = divs[i].querySelectorAll("a");
+          }
+
+          return fetch("./jsons/test.json").then((res) => {
+            return res.json();
+          }).then((_json) => {
+            json = _json;
+          });
+        });
+
+        test("Number of divs should be as same as JSON array elements", () => {
+          divs = document.querySelectorAll("body > div");
+
+          fixture("simple").addEventListener("rendered", () => {
+            divs = fixture("simple").querySelectorAll("div"); // document.querySelectorAll("body > div");
+  console.error(document.querySelectorAll("body")[0].outerHTML)
+          })
+
+          return new Promise(resolve => setTimeout(resolve, 7000)).then(function() {
+            divs = fixture("simple").querySelectorAll("div"); // document.querySelectorAll("body > div");
+          })
+
+          //assert.equal(divs.length, json.length);
+        });
+        //
+        // test("Template variables are correctly replaced to the values in JSON", () => {
+        //   for (let i = 0; i < json.length; i++) {
+        //     assert.equal(as[i].getAttribute("href"), "TODO" /*json[i].url*/);
+        //     assert.equal(as[i].innerHTML, json[i].name);
+        //   }
+        // });
+      });
+    </script>
+  </body>
+</html>

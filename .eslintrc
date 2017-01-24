@@ -1,8 +1,11 @@
 {
+  "root": true,
   "extends": "growaspeople",
 
   "env": {
     "browser":  true,
     "mocha": true
-  }
+  },
+
+  "plugins": [ "html" ]
 }

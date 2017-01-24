@@ -1,0 +1,11 @@
+{
+  "verbose": false,
+  "plugins": {
+    "local": {
+      "browsers": ["chrome"]
+    }
+  },
+  "webserver": {
+    "port": 2345
+  }
+}
