@@ -4,11 +4,18 @@
     <title>polymer-rest-template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="./rest-template.html">
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../rest-template.html">
   </head>
   <body>
     <!-- TODO Use some real REST API -->
-    <rest-template src="http://localhost/api/v1/something/1">id: {{ id }}, description: {{ description }}</rest-template>
+    <rest-template src="https://api.github.com/search/repositories?q=user:phanect&sort=updated">
+      <template>
+        {{#each items}}
+          <li><a href="{{ html_url }}">{{ name }}</a></li>
+        {{/each}}
+      </template>
+    </rest-template>
   </body>
 </html>
